@@ -27,9 +27,9 @@ setup(
     
     # Dependent packages (distributions)
     install_requires=[
-        "mediapipe",
-        "opencv-python",
         "numpy",
+        "opencv-python",
+        "mediapipe",
         "scipy",
     ],
 )
