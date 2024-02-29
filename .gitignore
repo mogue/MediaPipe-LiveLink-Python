@@ -1,0 +1,4 @@
+*/__pycache__/
+/build/
+/dist/
+/MediaPipe_LiveLink_Python.egg-info/
