@@ -1,4 +1,4 @@
-import os, time
+import os, time, pkgutil
 import numpy as np
 import cv2
 import mediapipe as mp
@@ -19,10 +19,13 @@ show_webcam = config["UI"].getboolean("preview_camera",  fallback=False)
 cv2.namedWindow("preview")
 cap = cv2.VideoCapture(config["Camera"].getint("input_source", fallback=0))
 
-if "Width"  in config["Camera"]:
-    cap.set(3, config["Camera"].getfloat("width"))    # width
-if "Height" in config["Camera"]:
-    cap.set(4, config["Camera"].getfloat("height"))   # height
+cam_width = config["Camera"].getfloat("width")
+cam_height = config["Camera"].getfloat("height")
+
+if cam_width > 0:
+    cap.set(3, cam_width)    # width
+if cam_height > 0:
+    cap.set(4, cam_height)   # height
 
 latest_results = None
 
@@ -34,7 +37,10 @@ def print_result(result: vision.FaceLandmarkerResult, output_image: mp.Image, ti
     # print('face detector result: {}'.format(result))
 
 # STEP 2: Create an FaceLandmarker object.
-base_options = python.BaseOptions(model_asset_path='src/face_landmarker_v2_with_blendshapes.task')
+base_options = python.BaseOptions(
+    # model_asset_path=os.path.join('src','face_landmarker_v2_with_blendshapes.task'),
+    model_asset_buffer=pkgutil.get_data( 'src', 'face_landmarker_v2_with_blendshapes.task' )
+    )
 options = vision.FaceLandmarkerOptions(base_options=base_options,
                                        running_mode=VisionRunningMode.IMAGE,  # VisionRunningMode.LIVE_STREAM,
                                        # result_callback=print_result,
