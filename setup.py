@@ -29,6 +29,7 @@ setup(
     install_requires=[
         "mediapipe",
         "opencv-python",
+        "numpy",
         "scipy",
     ],
 )

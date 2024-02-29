@@ -14,7 +14,7 @@ Open a command prompt navigate to the `MediaPipe-LiveLink-Python` directory and 
 python setup.py install
 ```
 
-The setup.py will install dependancies (opencv-python, mediapipe, scipy)
+The setup.py will install dependancies (opencv-python, mediapipe, scipy, numpy)
 
 ## Run
 
