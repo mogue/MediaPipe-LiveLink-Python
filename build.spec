@@ -6,20 +6,32 @@ a = Analysis(
     pathex=[],
     binaries=[],
     datas=[ ('src/face_landmarker_v2_with_blendshapes.task', 'src') ],
-    hiddenimports=[],
+    hiddenimports=['pyi_splash'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
     excludes=[],
-    noarchive=False,
+    noarchive=False
 )
 pyz = PYZ(a.pure)
+splash = Splash(
+    'img/splash.png',
+    binaries=a.binaries,
+    datas=a.datas,
+    text_pos=(10, 590),
+    text_size=10,
+    text_color='white',
+    minify_script=True,
+    always_on_top=True
+)
 
 exe = EXE(
     pyz,
     a.scripts,
     a.binaries,
     a.datas,
+    splash,
+    splash.binaries,
     [],
     name='WebCam_LiveLink',
     debug=False,
@@ -34,4 +46,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon='img/icon.ico'
 )

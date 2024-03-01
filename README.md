@@ -38,7 +38,7 @@ The first time the application is run it will create `WebCam_LiveLink.ini` with 
 Executable is built using pyinstaller (`pip install pyinstaller`).
 
 ```
-pyinstaller  build.spec
+pyinstaller --clean build.spec
 ```
 
 The build will be in a `dist` folder as a single file executable.
