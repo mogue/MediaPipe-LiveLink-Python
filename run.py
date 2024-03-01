@@ -1,3 +1,12 @@
+try:
+    import pyi_splash
 
-from src import run
-run()
+    # Update the text on the splash screen
+    pyi_splash.update_text("WebCam Live Link!")
+    pyi_splash.update_text("PauseChamp")
+
+    pyi_splash.close()
+except ImportError:
+    pass
+
+import src
