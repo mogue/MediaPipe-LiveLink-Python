@@ -1,2 +1,3 @@
 import src.config
-import src.camera
+import src.logger
+import src.ui

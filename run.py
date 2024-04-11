@@ -9,4 +9,5 @@ try:
 except ImportError:
     pass
 
+import data
 import src

@@ -1,8 +1,12 @@
-# MediaPipe-LiveLink-Python
-Use MediaPipe video capture and send motion capture to LiveLink for VTubeing.
+# Mogue Motion Capture
+General mocap solutions in python. Designed to work out-of-the-box with MikoVerse but configurable for other virtual avatar applications.
 
-Designed to use webcams with Unreal Engine's Live Link Face plugin.
+Currently:
+* Uses *MediaPipe* video tracking.
+* Send *Live Link Face* data
 
+Executable release available here: 
+[Releases](https://github.com/mogue/MediaPipe-LiveLink-Python/releases)
 
 ## Installation
 
@@ -11,15 +15,22 @@ Make sure you have Python 3 installed and available in the command line.
 Open a command prompt navigate to the `MediaPipe-LiveLink-Python` directory and type:
 
 ```
-python setup.py install
+pip install -r requirements.txt
 ```
 
-The setup.py will install dependancies (opencv-python, mediapipe, scipy, numpy)
+pip will install dependancies (opencv-python, mediapipe, scipy, numpy, ttkbootstrap, pygrabber)
 
+Or install the dependicies by yourself.
+
+Can be done in one line:
+
+```
+pip install mediapipe opencv-python numpy scipy ttkbootstrap pygrabber
+```
 
 ## Run
 
-After installing dependencies.
+After installing dependencies type:
 
 ```
 python run.py
@@ -42,3 +53,8 @@ pyinstaller --clean build.spec
 ```
 
 The build will be in a `dist` folder as a single file executable.
+
+
+### Thanks for testing, suggesetions, help and support
+
+Artelis, BelosJams, CandyZeus, CodeMiko, C1nder, Digy, DreadExcalibur, Emily, EmmeVT, Evekta, Galahad333, Grogdan, justmadeninjas, kyodamaru, Melokacool, M!LD, NyaTokki, OrbitaLinx, PenguinObscurus, peter_hank, proinpretius, Roach, Ryhverse, Sir Aythusa, SleepingJackel, TM, Trip and you!

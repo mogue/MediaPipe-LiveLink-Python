@@ -1,0 +1,40 @@
+
+--------------------------
+Mogue Motion Capture v.0.2
+Version notes:
+
+* Press the play button to start camera tracking.
+
+* Changed project name to "MogueMotionCapture"
+* Added UI controls (with tkinter and ttkbootstrap)
+
+* Tracking features:
+  * Jitter Removal added (Acts as a noise gate ignoring minor fluctuations)
+  * Motion Smoothing added (Interpolates the tracking input to 60 fps animation output)
+
+* Puppet features:
+  * "Set Neutral Face" button 
+      Look forward and relaxed and press. This will offset the zero value for blendshapes.
+      Right Click the button to reset offset to zero; removes any offset.
+  * Elastic Calibration Scaling added (experimental)
+      Dynamically reads the maximum value of blendshapes that gets remapped to one (full blend).
+      Uncheck and recheck to reset this calibration.
+  * Face Rotation (toggle head movement)
+  * Animation: Return to Neutral.
+      When the face is missing blendshapes will be animated back to zero.
+  * Animation: Auto-Blink (semi-random eye blinking)
+
+* Monitor features:
+  * Monitor the blendshapes individually
+  * Click on a blendshape to override it's value
+      Set it to 0 to disable or any static value
+  * Right Click a blandshape to reactive the tracking
+
+
+--------------------------
+WebCam_LiveLink v.0.1
+Version notes:
+
+* Initial release
+* Sends MediaPipe Face detection through Live Link Face protocol
+* Configure with a .ini file

@@ -5,7 +5,10 @@ a = Analysis(
     ['run.py'],
     pathex=[],
     binaries=[],
-    datas=[ ('src/face_landmarker_v2_with_blendshapes.task', 'src') ],
+    datas=[ 
+        ('data/face_landmarker_v2_with_blendshapes.task', 'data'),
+        ('data/hand_landmarker.task', 'data')
+    ],
     hiddenimports=['pyi_splash'],
     hookspath=[],
     hooksconfig={},
@@ -22,7 +25,7 @@ splash = Splash(
     text_size=10,
     text_color='white',
     minify_script=True,
-    always_on_top=True
+    always_on_top=False
 )
 
 exe = EXE(
@@ -33,7 +36,7 @@ exe = EXE(
     splash,
     splash.binaries,
     [],
-    name='WebCam_LiveLink',
+    name='MogueMotionCapture',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
